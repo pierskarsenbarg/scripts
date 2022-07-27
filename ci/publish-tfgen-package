@@ -26,7 +26,7 @@ if ! "${SCRIPT_ROOT}"/check-package-dependencies "${SOURCE_ROOT}/sdk/nodejs/bin/
     exit 1
 fi
 
-if [[ "${TRAVIS_OS_NAME:-}" == "linux" ]]; then
+
     # Publish the NPM package.
     echo "Publishing NPM package to NPMjs.com:"
 
@@ -124,4 +124,3 @@ if [[ "${TRAVIS_OS_NAME:-}" == "linux" ]]; then
         find "${SOURCE_ROOT}/sdk/dotnet/bin/Debug/" -name 'Pulumi.*.nupkg' \
             -exec dotnet nuget push -k "${NUGET_PUBLISH_KEY}" -s https://api.nuget.org/v3/index.json {} ';'
     fi
-fi
